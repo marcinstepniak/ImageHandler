@@ -1,0 +1,24 @@
+﻿@model MvcApplication3.Models.RaspPiImage
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Image handler</title>
+    </head>
+    <body>
+        <div>
+            
+            Image uploaded:@Model.FileName;
+        </div>
+        
+        <div>
+            <img src="/home/getLastImage" alt="yo"/>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Rasp Mock";
+  
+}
+
+<h2>Rasp</h2>
+
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, 
+                            new { target="_blank", enctype = "multipart/form-data" }))
+{  
+    
+    @*<input type="text" id="desc" name="desc" value="dupa"/>*@
+    <label for="file">Upload Image:</label> 
+    <input type="file" name="imgFileContent" id="imgFileContent" style="width: 100%;" /> 
+    <input type="submit" value="Upload" class="submit" /> 
+}
+
+
+   

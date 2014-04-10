@@ -1,0 +1,31 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "title";
+}
+<html>
+    <head>
+        <script src="~/Scripts/jquery-2.1.0.min.js"></script>
+    </head>
+
+</html>
+<h2>title</h2>
+<div>
+    
+    <img id="currentImage" src="/home/getLastImageContent/" alt="yo"/>
+
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        setInterval(refreshImage, 10000);
+
+    });
+    
+    function refreshImage() {
+        
+        $("#currentImage").attr("src", "/home/getLastImageContent?a=" + new Date().getTime());
+
+    }
+</script>
