@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
-using System.Web;
 using System.Web.Mvc;
-//using System.Web.HttpPostedFileBase;
 using MvcApplication3.Models;
 
 namespace MvcApplication3.Controllers
@@ -20,7 +16,6 @@ namespace MvcApplication3.Controllers
         [HttpPost]
         public ActionResult Index()
         {
-
             if (Request.Files.Count < 1)
                 return null;
 
@@ -33,7 +28,7 @@ namespace MvcApplication3.Controllers
 
                 lock (ImgCollection)
                 {
-                    if (ImgCollection.Count > 3)
+                    if (ImgCollection.Count > 2)
                     {
                         ImgCollection.Dequeue();
                     }
@@ -77,9 +72,7 @@ namespace MvcApplication3.Controllers
                         Response.OutputStream.Flush();
                     }
                     catch (Exception)
-                    {
-
-                    }
+                    { }
                 }
             }
         }

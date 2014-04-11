@@ -52,3 +52,4 @@ C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\bin\System.W
 C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\bin\System.Web.WebPages.Razor.xml
 C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\obj\Debug\MvcApplication3.dll
 C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\obj\Debug\MvcApplication3.pdb
+C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\obj\Debug\FileUploader.csprojResolveAssemblyReference.cache

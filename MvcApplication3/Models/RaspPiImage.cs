@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing.Imaging;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using System.Web;
 using System.Drawing;
-using System.Web.UI.WebControls;
 
 namespace MvcApplication3.Models
 {
