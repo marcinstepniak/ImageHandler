@@ -9,7 +9,7 @@ namespace MvcApplication3.Controllers
 {
     public class HomeController : Controller
     {
-        public static Queue<RaspPiImage> ImgCollection = new Queue<RaspPiImage>();
+        public static RaspPiImage Image;
 
         //
         // GET: /Home/
@@ -26,14 +26,16 @@ namespace MvcApplication3.Controllers
             {
                 model = new RaspPiImage(file);
 
-                lock (ImgCollection)
+                if (Image == null)
                 {
-                    if (ImgCollection.Count > 2)
+                    Image = model;
+                }
+                else
+                {
+                    lock (Image)
                     {
-                        ImgCollection.Dequeue();
+                        Image = model;
                     }
-
-                    ImgCollection.Enqueue(model);
                 }
             }
 
@@ -42,33 +44,28 @@ namespace MvcApplication3.Controllers
 
         public ActionResult GetLastImage()
         {
-            lock (ImgCollection)
-            {
-                ImgCollection.Clear();
-            }
-
             return View(new object());
         }
 
         public void GetLastImageContent()
         {
-            lock (ImgCollection)
-            {
-                if (ImgCollection == null || ImgCollection.Count == 0)
-                    return;
+            if (Image == null)
+                return;
 
-                var model = ImgCollection.Count == 1 ? ImgCollection.ElementAt(0) : ImgCollection.Dequeue();
+            lock (Image)
+            {
+
                 Response.Clear();
-                Response.ContentType = model.ContentType;
+                Response.ContentType = Image.ContentType;
                 Response.ContentEncoding = Encoding.UTF8;
                 Response.BufferOutput = false;
-                Response.AppendHeader("content-disposition", string.Concat("attachment; filename=", model.FileName));
+                Response.AppendHeader("content-disposition", string.Concat("attachment; filename=", Image.FileName));
 
                 if (Response.IsClientConnected)
                 {
                     try
                     {
-                        Response.BinaryWrite(model.ContentByte());
+                        Response.BinaryWrite(Image.ContentByte());
                         Response.OutputStream.Flush();
                     }
                     catch (Exception)
