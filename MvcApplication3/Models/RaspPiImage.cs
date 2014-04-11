@@ -31,27 +31,16 @@ namespace MvcApplication3.Models
 
         public Bitmap BmpFile { get; set; }
 
-        public System.IO.Stream HttpStream { get; set; }
+        public Stream HttpStream { get; set; }
 
         public string FileName { get; set; }
 
-        public byte[] ContentByte 
+        public byte[] ContentByte()
         {
-            get
-            {
-                var image = 
-                    ImageFile; //(System.Drawing.Image)BmpFile;
+            var converter = new ImageConverter();
+            var array = (byte[])converter.ConvertTo(ImageFile, typeof(byte[]));
 
-                byte[] array;
-                using (MemoryStream m = new MemoryStream())
-                {
-                   image.Save(m,ImageFormat.Png);
-                    m.Close();
-                    array = m.ToArray();
-                }
-
-                return array;
-            }
+            return array;
         }
 
 
@@ -68,9 +57,9 @@ namespace MvcApplication3.Models
 
             Graphics g = Graphics.FromImage(new Bitmap(image));
 
-            g.DrawString("Test", new Font("Arial",12), Brushes.Red, 10,10) ;
+            g.DrawString("Test", new Font("Arial", 12), Brushes.Red, 10, 10);
             g.Save();
-            return new Bitmap(image.Width,image.Height,g);
+            return new Bitmap(image.Width, image.Height, g);
         }
     }
 

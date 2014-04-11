@@ -13,59 +13,75 @@ namespace MvcApplication3.Controllers
 {
     public class HomeController : Controller
     {
+        public static Queue<RaspPiImage> ImgCollection = new Queue<RaspPiImage>();
+
         //
         // GET: /Home/
-
-        public static Queue<RaspPiImage> ImgCollection
-        {
-            get
-            {
-                if (imgCollection == null)
-                    imgCollection = new Queue<RaspPiImage>();
-                return
-                    imgCollection;
-            }
-            set { imgCollection = value; }
-        }
-
-        private static Queue<RaspPiImage> imgCollection;
-            
         [HttpPost]
         public ActionResult Index()
         {
-            RaspPiImage Model = null;
+
+            if (Request.Files.Count < 1)
+                return null;
 
             var file = Request.Files[0];
 
+            RaspPiImage model = null;
             if (file != null)
             {
-                Model = new RaspPiImage(file);
-              
-                ImgCollection.Enqueue(Model);
+                model = new RaspPiImage(file);
+
+                lock (ImgCollection)
+                {
+                    if (ImgCollection.Count > 3)
+                    {
+                        ImgCollection.Dequeue();
+                    }
+
+                    ImgCollection.Enqueue(model);
+                }
             }
-            return View(Model);
+
+            return View(model);
         }
 
         public ActionResult GetLastImage()
         {
+            lock (ImgCollection)
+            {
+                ImgCollection.Clear();
+            }
+
             return View(new object());
         }
 
         public void GetLastImageContent()
         {
-            if (imgCollection==null || imgCollection.Count == 0)
-                return;
+            lock (ImgCollection)
+            {
+                if (ImgCollection == null || ImgCollection.Count == 0)
+                    return;
 
-            var model = imgCollection.Count == 1 ? imgCollection.ElementAt(0) : imgCollection.Dequeue();
-            Response.Clear();
-            Response.ContentType = model.ContentType;
-            Response.ContentEncoding = Encoding.UTF8;
-            Response.BufferOutput = false;
-            Response.AppendHeader("content-disposition", string.Concat("attachment; filename=", model.FileName));
+                var model = ImgCollection.Count == 1 ? ImgCollection.ElementAt(0) : ImgCollection.Dequeue();
+                Response.Clear();
+                Response.ContentType = model.ContentType;
+                Response.ContentEncoding = Encoding.UTF8;
+                Response.BufferOutput = false;
+                Response.AppendHeader("content-disposition", string.Concat("attachment; filename=", model.FileName));
 
-            Response.BinaryWrite(model.ContentByte);
-            Response.OutputStream.Flush();
+                if (Response.IsClientConnected)
+                {
+                    try
+                    {
+                        Response.BinaryWrite(model.ContentByte());
+                        Response.OutputStream.Flush();
+                    }
+                    catch (Exception)
+                    {
 
+                    }
+                }
+            }
         }
 
     }

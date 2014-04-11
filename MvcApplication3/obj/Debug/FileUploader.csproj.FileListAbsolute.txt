@@ -25,3 +25,30 @@ c:\users\marcin.stepniak\documents\visual studio 2012\Projects\MvcApplication3\M
 c:\users\marcin.stepniak\documents\visual studio 2012\Projects\MvcApplication3\MvcApplication3\obj\Debug\FileUploader.csprojResolveAssemblyReference.cache
 c:\users\marcin.stepniak\documents\visual studio 2012\Projects\MvcApplication3\MvcApplication3\obj\Debug\MvcApplication3.dll
 c:\users\marcin.stepniak\documents\visual studio 2012\Projects\MvcApplication3\MvcApplication3\obj\Debug\MvcApplication3.pdb
+C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\bin\MvcApplication3.dll.config
+C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\bin\MvcApplication3.dll
+C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\bin\MvcApplication3.pdb
+C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\bin\Newtonsoft.Json.dll
+C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\bin\System.Net.Http.Formatting.dll
+C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\bin\System.Web.Helpers.dll
+C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\bin\System.Web.Http.dll
+C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\bin\System.Web.Http.WebHost.dll
+C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\bin\System.Web.Mvc.dll
+C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\bin\System.Web.Razor.dll
+C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\bin\System.Web.WebPages.Deployment.dll
+C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\bin\System.Web.WebPages.dll
+C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\bin\System.Web.WebPages.Razor.dll
+C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\bin\Newtonsoft.Json.xml
+C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\bin\System.Net.Http.Formatting.xml
+C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\bin\System.Web.Helpers.xml
+C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\bin\System.Web.Http.xml
+C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\bin\System.Web.Http.WebHost.xml
+C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\bin\System.Web.Mvc.xml
+C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\bin\System.Web.Razor.xml
+C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\bin\System.Web.WebPages.xml
+C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\bin\System.Web.WebPages.Deployment.xml
+C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\bin\System.Web.WebPages.Razor.xml
+C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\obj\Debug\MvcApplication3.dll
+C:\Users\simon.colmer\Documents\GitHub\ImageHandler\MvcApplication3\obj\Debug\MvcApplication3.pdb
